@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Página Principal do Sistema Financeiro">
+    <meta name="robots" content="index, follow">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&amp;display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
+    <title>Sistema Financeiro</title>
+</head>
+<body>
+    <header>
+        <h1>Sistema Financeiro</h1>
+    </header>
+    
+    <main>
+        <h2>Balanço</h2>
+
+        <div class="content">
+            <div class="allcards">
+                <button id="btn-income" class="card card-income">
+                    <h3>Receitas</h3>
+                    <p>R$ 0.00</p>
+                </button>
+                <button id="btn-expenses" class="card card-expenses">
+                    <h3>Despesas</h3>
+                    <p>R$ 0.00</p>
+                </button>
+                <button class="card card-total">
+                    <h3>Saldo</h3>
+                    <p>R$ 0.00</p>
+                </button>
+            </div>
+
+            <div class="instrução">Clique em "Receitas" ou "Despesas" para realizar um novo lançamento.</div>
+
+            <div class="lista-label">
+                <span class="label-description">Descrição</span>
+                <span>Data</span>
+                <span class="label-value">Valor</span>
+            </div>
+            <div class="div-lista">
+                <ul id="lista-transações">
+                </ul>
+            </div>
+        </div>
+
+        <div id="modal-full-screen" class="background-modal">
+            <div class="modal">
+                <div class="modal-header">
+                    <p class="operation-title">Nova receita/despesa</p>
+                    <p class="close">&times;</p>
+                </div>
+                <div class="modal-content">
+                    <div class="div-value" onmouseover="hoverValueDiv()" onmouseout="clearHoverValueDiv()">
+                        <span class="span-RS">R$</span>
+                        <input type="number" class="modal-input" id="value" placeholder="0,00" min="0" onkeyup="verifyInputs()" onfocus="focusInputValue()" onblur="clearFocusInputValue()">
+                    </div>
+                    <input type="text" class="modal-input input-description" id="description" placeholder="Descrição" maxlength="30" onmouseover="hoverInputDescription()" onmouseout="clearHoverInputDescription()" onkeyup="verifyInputs()" onfocus="focusInputDescription()" onblur="clearFocusInputDescription()">
+                    <div class="div-date" onmouseover="hoverDateDiv()" onmouseout="clearHoverDateDiv()">
+                        <input type="date" id="date-transaction" class="input-date" onkeyup="verifyInputs()" onfocus="focusInputDate()" onblur="clearFocusInputDate()">
+                    </div>
+                    <button id="add-item" class="btn">ADICIONAR</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Sistema Financeiro - 2021. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
